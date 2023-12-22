@@ -1,0 +1,5 @@
+{
+  "source": { "resourceType": "Subscriber", "resourceId": "001019999999999" },
+  "tags": { "name": "test name" },
+  "location": { "lat": 43.12345, "lon": 138.112233 }
+}

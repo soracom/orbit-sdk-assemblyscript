@@ -1,0 +1,26 @@
+{
+    "name": "gps-multi-unit",
+    "version": "1.0.0",
+    "description": "AssemblyScript example for SORACOM Orbit",
+    "license": "SEE LICENSE IN LICENSE.txt",
+    "author": "SORACOM",
+    "main": "build/soralet-optimized.wasm",
+    "engines": {
+        "node": "~20"
+    },
+    "scripts": {
+        "build": "asc assembly/index.ts --binaryFile build/soralet.wasm --sourceMap --debug --runtime stub --use abort=~lib/orbit-sdk-assemblyscript/index/abort",
+        "build:optimized": "asc assembly/index.ts --binaryFile build/soralet-optimized.wasm --sourceMap --optimize --runtime stub --use abort=~lib/orbit-sdk-assemblyscript/index/abort",
+        "clean": "rm -fR build"
+    },
+    "dependencies": {
+        "assemblyscript-json": "^1.1.0",
+        "orbit-sdk-assemblyscript": "file:../../"
+    },
+    "devDependencies": {
+        "@assemblyscript/loader": "^0.18.32",
+        "@types/node": "^20.10.5",
+        "assemblyscript": "^0.18.32",
+        "typescript": "^5.3.3"
+    }
+}
