@@ -4,7 +4,7 @@
  * @file defines SORACOM Orbit SDK
  * @author SORACOM, INC.
  * @copyright 2020 SORACOM, INC. All rights reserved.
- * @version 0.1.0
+ * @version 1.0.0
  */
 
 // Orbit environment provided functions
@@ -53,6 +53,12 @@ export declare function orbit_get_userdata(ptr: i32, len: i32): i32;
 // @ts-ignore
 @external("env", "orbit_get_userdata_len")
 export declare function orbit_get_userdata_len(): i32;
+// @ts-ignore
+@external("env", "orbit_get_original_request")
+export declare function orbit_get_original_request(ptr: i32, len: i32): i32;
+// @ts-ignore
+@external("env", "orbit_get_original_request_len")
+export declare function orbit_get_original_request_len(): i32;
 
 export class Location {
   // eslint-disable-next-line no-unused-vars
@@ -173,6 +179,15 @@ export function setOutputJSON(json: string): void {
 export function getUserdata(): string {
   const arr = new Uint8Array(orbit_get_userdata_len());
   orbit_get_userdata(uint8ArrayToPointer(arr), arr.length);
+  return toUTF8String(arr);
+}
+
+/**
+ * get userdata as string from environment
+ */
+export function getOriginalRequest(): string {
+  const arr = new Uint8Array(orbit_get_original_request_len());
+  orbit_get_original_request(uint8ArrayToPointer(arr), arr.length);
   return toUTF8String(arr);
 }
 
