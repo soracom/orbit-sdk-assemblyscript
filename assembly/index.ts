@@ -45,6 +45,12 @@ export declare function orbit_get_timestamp(): i64;
 @external("env", "orbit_set_output")
 export declare function orbit_set_output(json: i32, len: i32): void;
 // @ts-ignore
+@external("env", "orbit_set_tag_value")
+export declare function orbit_set_tag_value(name_ptr: i32, name_len: i32, value_ptr: i32, value_len: i32): void;
+// @ts-ignore
+@external("env", "orbit_delete_tag_value")
+export declare function orbit_delete_tag_value(name_ptr: i32, name_len: i32): void;
+// @ts-ignore
 @external("env", "orbit_set_output_content_type")
 export declare function orbit_set_output_content_type(type: i32, len: i32): void;
 // @ts-ignore
@@ -120,7 +126,7 @@ export function getInputBufferAsString(): string {
 }
 
 /**
- * get tag value from input data
+ * get tag value on current soralet context
  *
  * @param name tag name
  */
@@ -141,6 +147,29 @@ export function getSourceValue(name: string): string {
   const arr = new Uint8Array(orbit_get_source_value_len(toPointer(n), n.byteLength));
   orbit_get_source_value(toPointer(n), n.byteLength, uint8ArrayToPointer(arr), arr.length);
   return toUTF8String(arr);
+}
+
+/**
+ * Set the tag value of requesting resource (example: SIM)
+ * 
+ * @param name tag name
+ * @param value tag value
+ */
+export function set_tag_value(name: string, value: string): void {
+  const n = String.UTF8.encode(name);
+  const v = String.UTF8.encode(value);
+  orbit_set_tag_value(toPointer(n), n.byteLength, toPointer(v), v.byteLength);
+}
+
+/**
+ * Delete the tag of requesting resource (example: SIM)
+ * 
+ * @param name tag name
+ * @param value tag value
+ */
+export function delete_tag(name: string): void {
+  const n = String.UTF8.encode(name);
+  orbit_delete_tag_value(toPointer(n), n.byteLength);
 }
 
 /**
