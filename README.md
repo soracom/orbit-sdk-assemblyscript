@@ -54,6 +54,10 @@ Please refer to [Soracom Orbit SDK Reference](https://developers.soracom.io/en/d
 
 For more specific usage, please refer to each sample in the `examples` directory.
 
+### Notice
+
+Please use the latest **tagged** release that supports the features currently available on the Soracom platform. The `main` branch may contain unreleased features and could break your code.
+
 ## Examples
 
 The `examples` directory in this repository includes the following samples:
