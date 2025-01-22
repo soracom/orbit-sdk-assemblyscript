@@ -155,7 +155,7 @@ export function getSourceValue(name: string): string {
  * @param name tag name
  * @param value tag value
  */
-export function set_tag_value(name: string, value: string): void {
+export function setTagValue(name: string, value: string): void {
   const n = String.UTF8.encode(name);
   const v = String.UTF8.encode(value);
   orbit_set_tag_value(toPointer(n), n.byteLength, toPointer(v), v.byteLength);
@@ -167,7 +167,7 @@ export function set_tag_value(name: string, value: string): void {
  * @param name tag name
  * @param value tag value
  */
-export function delete_tag(name: string): void {
+export function deleteTag(name: string): void {
   const n = String.UTF8.encode(name);
   orbit_delete_tag_value(toPointer(n), n.byteLength);
 }
