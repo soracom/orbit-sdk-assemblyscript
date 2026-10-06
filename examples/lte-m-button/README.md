@@ -99,4 +99,4 @@ This sample code adds IMSI and name for identifying the SIM, and location inform
    ]
    ```
 
-7. Once you have confirmed the operation, link the uploaded Soralet to the LTE-M button group settings, and try pressing the button in reality. For details, please refer to the [User Documentation](https://developers.soracom.io/en/docs/orbit/configuration/).
+7. Once you have confirmed the operation, link the uploaded Soralet to the LTE-M button group settings, and try pressing the button in reality. For details, please refer to the [User Documentation](https://docs.soracom.io/en/services/orbit/configuration).

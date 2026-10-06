@@ -31,7 +31,7 @@ Please add some scripts to `package.json`, as shown below.
 ```
 
 Once `npm run build` or `npm run build:optimized` is executed, `soralet.wasm` or `soralet-optimized.wasm` is generated in the `build` directory.  
-Please [upload](https://developers.soracom.io/en/docs/orbit/soralets-and-modules/) either one as a Soralet.  
+Please [upload](https://docs.soracom.io/en/services/orbit/soralets-and-modules) either one as a Soralet.  
 `soralet.wasm` is for debugging, and `soralet-optimized.wasm` is for release.
 
 Please import the functions SDK provides, as shown below.
@@ -50,7 +50,7 @@ import {
 } from "orbit-sdk-assemblyscript";
 ```
 
-Please refer to [Soracom Orbit SDK Reference](https://developers.soracom.io/en/docs/orbit/sdk-reference/).
+Please refer to [Soracom Orbit SDK Reference](https://docs.soracom.io/en/services/orbit/reference).
 
 For more specific usage, please refer to each sample in the `examples` directory.
 

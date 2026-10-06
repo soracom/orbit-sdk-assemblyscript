@@ -109,6 +109,6 @@ Specifically, it adds a `distance_in_km` field indicating the distance from the 
    ]
    ```
 
-7. Once you have confirmed the operation, link the uploaded Soralet to the GPS Multi Unit group settings. For details on how to set it up, please refer to the [User Documentation](https://developers.soracom.io/en/docs/orbit/configuration/).
+7. Once you have confirmed the operation, link the uploaded Soralet to the GPS Multi Unit group settings. For details on how to set it up, please refer to the [User Documentation](https://docs.soracom.io/en/services/orbit/configuration).
    Then, specify the `center_lat` and `center_lon` to represent the center coordinates, and `radius` to represent the radius from there, in the tags of the SIM. Obtain and set the latitude and longitude of the center coordinates from sources like Google Maps.
    Afterwards, try transmitting GPS coordinates from the GPS Multi Unit.
